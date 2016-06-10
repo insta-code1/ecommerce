@@ -2,27 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19440864-48b4-4c42-aa7d-341e3094901e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/static_in_pro/our_static/js/custom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/templates/alert.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/carts/migrations/0007_cart_subtotal.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db.sqlite3" afterPath="$PROJECT_DIR$/src/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ecommerce-2.iml" afterPath="$PROJECT_DIR$/.idea/ecommerce-2.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/carts/models.py" afterPath="$PROJECT_DIR$/src/carts/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/carts/templates/carts/view.html" afterPath="$PROJECT_DIR$/src/carts/templates/carts/view.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/carts/views.py" afterPath="$PROJECT_DIR$/src/carts/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/products/models.py" afterPath="$PROJECT_DIR$/src/products/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/products/templates/products/product_detail.html" afterPath="$PROJECT_DIR$/src/products/templates/products/product_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/static_in_pro/our_static/css/custom.css" afterPath="$PROJECT_DIR$/src/static_in_pro/our_static/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/javascript.html" afterPath="$PROJECT_DIR$/src/templates/javascript.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_in_env/static_root/admin/css/forms.css" afterPath="$PROJECT_DIR$/static_in_env/static_root/admin/css/forms.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_in_env/static_root/admin/css/widgets.css" afterPath="$PROJECT_DIR$/static_in_env/static_root/admin/css/widgets.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_in_env/static_root/admin/js/admin/DateTimeShortcuts.js" afterPath="$PROJECT_DIR$/static_in_env/static_root/admin/js/admin/DateTimeShortcuts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_in_env/static_root/admin/js/admin/RelatedObjectLookups.js" afterPath="$PROJECT_DIR$/static_in_env/static_root/admin/js/admin/RelatedObjectLookups.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_in_env/static_root/admin/js/core.js" afterPath="$PROJECT_DIR$/static_in_env/static_root/admin/js/core.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_in_env/static_root/css/custom.css" afterPath="$PROJECT_DIR$/static_in_env/static_root/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static_in_env/static_root/js/custom.js" afterPath="$PROJECT_DIR$/static_in_env/static_root/js/custom.js" />
     </list>
     <ignored path="ecommerce-2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,20 +38,56 @@
     <favorites_list name="ecommerce-2" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="view.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/carts/templates/carts/view.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-              <folding>
-                <element signature="e#1295#1316#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="vertical" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/carts/views.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-396">
+                  <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="view.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/carts/templates/carts/view.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="315">
+                  <caret line="36" column="13" selection-start-line="29" selection-start-column="12" selection-end-line="36" selection-end-column="13" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="product_detail.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/products/templates/products/product_detail.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/carts/views.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="66">
+                  <caret line="46" column="59" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="59" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -85,14 +104,14 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/ecommerce2/settings/local.py" />
-        <option value="$PROJECT_DIR$/src/carts/views.py" />
         <option value="$PROJECT_DIR$/src/products/models.py" />
         <option value="$PROJECT_DIR$/src/carts/models.py" />
         <option value="$PROJECT_DIR$/src/templates/alert.html" />
         <option value="$PROJECT_DIR$/src/static_in_pro/our_static/css/custom.css" />
-        <option value="$PROJECT_DIR$/src/products/templates/products/product_detail.html" />
         <option value="$PROJECT_DIR$/src/templates/javascript.html" />
         <option value="$PROJECT_DIR$/src/static_in_pro/our_static/js/custom.js" />
+        <option value="$PROJECT_DIR$/src/carts/views.py" />
+        <option value="$PROJECT_DIR$/src/products/templates/products/product_detail.html" />
         <option value="$PROJECT_DIR$/src/carts/templates/carts/view.html" />
       </list>
     </option>
@@ -645,7 +664,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="2135" y="52" width="1151" height="1028" extended-state="4" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17466064" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -655,7 +674,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33870968" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33870968" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -791,32 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/products/templates/products/product_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1710">
-          <caret line="114" column="24" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/carts/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="46" column="81" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/carts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/products/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -835,13 +828,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/carts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/products/templates/products/product_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/carts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-396">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/carts/templates/carts/view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding>
-            <element signature="e#1295#1316#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="315">
+          <caret line="36" column="13" selection-start-line="29" selection-start-column="12" selection-end-line="36" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

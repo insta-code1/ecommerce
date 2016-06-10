@@ -27,8 +27,16 @@ $(".item-qty").change(function(){
 				$("#item-line-total-"+item).text(data.line_total);
 				$("#subtotal").text(data.subtotal);
 			}
+            var message = ""
+            if(data.item_added) {
+                message = "Successfully added to cart"
+            } else if (data.item_removed) {
+                message = "Item removed"
+            } else {
+                message = "Item updated"
+            }
 
-            showFlashMessage("Cart updated")
+            showFlashMessage(data.flash_message);
 		},
 		error: function(response, error) {
 			// console.log(response)
