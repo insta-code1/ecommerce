@@ -26,7 +26,7 @@ class ProductManager(models.Manager):
 
 
 class Product(models.Model):
-	title = models.CharField(max_length=120)
+	title = models.CharField(max_length=121)
 	description = models.TextField(blank=True, null=True)
 	price = models.DecimalField(decimal_places=2, max_digits=20)
 	active = models.BooleanField(default=True)
