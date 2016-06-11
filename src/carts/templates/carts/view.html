@@ -23,10 +23,18 @@ $(".item-qty").change(function(){
 			$("#jquery-message").text("Added " + data.item_added + " Deleted " + data.deleted)
 			if (data.deleted){
 				$("#item-"+item).fadeOut();
+                $("#subtotal").text("Subtotal:" + data.subtotal);
 			} else {
 				$("#item-line-total-"+item).text(data.line_total);
 				$("#subtotal").text(data.subtotal);
 			}
+
+            if(data.total == 0){
+                $(".table").fadeOut()
+                var template = "{% include 'carts/empty_cart.html' %}";
+                $(".main-content").html(template);
+            }
+
             var message = ""
             if(data.item_added) {
                 message = "Successfully added to cart"
@@ -35,9 +43,9 @@ $(".item-qty").change(function(){
             } else {
                 message = "Item updated"
             }
-
             showFlashMessage(data.flash_message);
-		},
+            updateCartItemCount()
+            },
 		error: function(response, error) {
 			// console.log(response)
 			// console.log(error)
@@ -56,6 +64,13 @@ $(".item-qty").change(function(){
 
 {% block content %}
 
+
+<div class="row main-content">
+{% if object.cartitem_set.count < 1 %}
+
+{% include "carts/empty_cart.html" %}
+
+{% else %}
 
 <table class='table'>
 
@@ -86,4 +101,7 @@ $(".item-qty").change(function(){
 </tr>
 
 </table>
+
+{% endif %}
+</div>
 {% endblock %}
