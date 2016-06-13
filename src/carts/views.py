@@ -1,14 +1,14 @@
+from django.contrib.auth.forms import AuthenticationForm
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, Http404, JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic.base import View
-from django.views.generic.detail import SingleObjectMixin
+from django.views.generic.detail import SingleObjectMixin, DetailView
 
 # Create your views here.
 
 from products.models import Variation
 from carts.models import Cart, CartItem
-
 
 
 class ItemCountView(View):
@@ -25,6 +25,7 @@ class ItemCountView(View):
         else:
             raise Http404
 
+
 class CartView(SingleObjectMixin, View):
     model = Cart
     template_name = "carts/view.html"
@@ -34,6 +35,7 @@ class CartView(SingleObjectMixin, View):
         cart_id = self.request.session.get("cart_id")
         if cart_id == None:
             cart = Cart()
+            cart.tax_percentage = 0.075
             cart.save()
             cart_id = cart.id
             self.request.session["cart_id"] = cart_id
@@ -59,19 +61,19 @@ class CartView(SingleObjectMixin, View):
                 raise Http404
             cart_item, created = CartItem.objects.get_or_create(cart=cart, item=item_instance)
             if created:
-                flash_message = "Successfully added to cart"
+                flash_message = "Successfully added to the cart"
                 item_added = True
             if delete_item:
                 flash_message = "Item removed successfully."
                 cart_item.delete()
             else:
                 if not created:
-                    flash_message = "Item has been updated successfully"
+                    flash_message = "Quantity has been updated successfully."
                 cart_item.quantity = qty
                 cart_item.save()
             if not request.is_ajax():
                 return HttpResponseRedirect(reverse("cart"))
-            # return cart_item.cart.get_absolute_url()
+                # return cart_item.cart.get_absolute_url()
 
         if request.is_ajax():
             try:
@@ -82,17 +84,31 @@ class CartView(SingleObjectMixin, View):
                 subtotal = cart_item.cart.subtotal
             except:
                 subtotal = None
+
+            try:
+                cart_total = cart_item.cart.total
+            except:
+                cart_total = None
+
+            try:
+                tax_total = cart_item.cart.tax_total
+            except:
+                tax_total = None
+
             try:
                 total_items = cart_item.cart.items.count()
             except:
                 total_items = 0
+
             data = {
                 "deleted": delete_item,
                 "item_added": item_added,
                 "line_total": total,
                 "subtotal": subtotal,
+                "cart_total": cart_total,
+                "tax_total": tax_total,
                 "flash_message": flash_message,
-                "total_items":total_items,
+                "total_items": total_items
             }
 
             return JsonResponse(data)
@@ -104,3 +120,29 @@ class CartView(SingleObjectMixin, View):
         return render(request, template, context)
 
 
+
+
+
+
+class CheckoutView(DetailView):
+    model = Cart
+    template_name = "carts/checkout_view.html"
+
+    def get_object(self, *args, **kwargs):
+        self.request.session.set_expiry(0)  # 5 minutes
+        cart_id = self.request.session.get("cart_id")
+        if cart_id == None:
+            return redirect("cart")
+        cart = Cart.objects.get(id=cart_id)
+        return cart
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(CheckoutView, self).get_context_data(*args, **kwargs)
+        user_can_continue = False
+        if not self.request.user.is_authenticated():# or if request.user.is_guest:
+            context["login_form"] = AuthenticationForm()
+            context["next_url"] = self.request.build_absolute_uri()
+        if self.request.user.is_authenticated(): # or if request.user.is_guest:
+            user_can_continue = True
+        context["user_can_continue"] = user_can_continue
+        return context
