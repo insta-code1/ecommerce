@@ -162,13 +162,3 @@ class ProductFeatured(models.Model):
 
 	def __unicode__(self):
 		return self.product.title
-
-
-
-
-
-
-
-
-
-

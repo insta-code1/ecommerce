@@ -81,9 +81,3 @@ def do_tax_and_total_receiver(sender, instance, *args, **kwargs):
 pre_save.connect(do_tax_and_total_receiver, sender=Cart)
 
 
-
-
-
-
-
-

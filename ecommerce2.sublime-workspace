@@ -4,6 +4,70 @@
 		"selected_items":
 		[
 			[
+				"st",
+				"street"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"__",
+				"__unicode__"
+			],
+			[
+				"C",
+				"CharFeild"
+			],
+			[
+				"c",
+				"CharFeild"
+			],
+			[
+				"us",
+				"UserCheckout"
+			],
+			[
+				"user",
+				"user_checkout"
+			],
+			[
+				"se",
+				"self"
+			],
+			[
+				"g",
+				"get"
+			],
+			[
+				"e",
+				"email"
+			],
+			[
+				"em",
+				"email"
+			],
+			[
+				"V",
+				"ValidationError"
+			],
+			[
+				"fo",
+				"forms"
+			],
+			[
+				"o",
+				"objects"
+			],
+			[
+				"ge",
+				"get_object"
+			],
+			[
+				"cre",
+				"Create"
+			],
+			[
 				"order",
 				"order_id"
 			],
@@ -14,10 +78,6 @@
 			[
 				"user_",
 				"user_check_id"
-			],
-			[
-				"user",
-				"user_checkout〔variable〕"
 			],
 			[
 				"custo",
@@ -54,10 +114,6 @@
 			[
 				"bi",
 				"billing_address"
-			],
-			[
-				"st",
-				"street〔variable〕"
 			],
 			[
 				"get_",
@@ -152,10 +208,6 @@
 				"email2"
 			],
 			[
-				"e",
-				"email2"
-			],
-			[
 				"template",
 				"template_name"
 			],
@@ -166,10 +218,6 @@
 			[
 				"updat",
 				"updateCartItemCount〔function〕"
-			],
-			[
-				"em",
-				"empty"
 			],
 			[
 				"sub",
@@ -466,72 +514,32 @@
 			[
 				"auto_now",
 				"auto_now_add"
-			],
-			[
-				"Che",
-				"ChemicalDetailViewAdmin"
-			],
-			[
-				"det",
-				"DetailView"
-			],
-			[
-				"pesti",
-				"PESTICIDE"
-			],
-			[
-				"Lec",
-				"LectureQuiz"
-			],
-			[
-				"Quiz",
-				"QuizQuestion"
-			],
-			[
-				"corr",
-				"correct_answer"
-			],
-			[
-				"clean",
-				"cleaned_data"
-			],
-			[
-				"le",
-				"lectures"
-			],
-			[
-				"QU",
-				"QuizQuestion"
-			],
-			[
-				"fade",
-				"fadeOut"
-			],
-			[
-				"js",
-				"JsonResponse"
-			],
-			[
-				"dat",
-				"dataTitle"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "src/todo.txt",
+			"file": "src/orders/models.py",
 			"settings":
 			{
-				"buffer_size": 357,
+				"buffer_size": 778,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/orders/templates/orders/order_summary_short.html",
+			"file": "src/orders/admin.py",
 			"settings":
 			{
-				"buffer_size": 767,
+				"buffer_size": 179,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/orders/forms.py",
+			"settings":
+			{
+				"buffer_size": 713,
 				"line_ending": "Unix"
 			}
 		},
@@ -539,15 +547,7 @@
 			"file": "src/orders/views.py",
 			"settings":
 			{
-				"buffer_size": 3483,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/orders/models.py",
-			"settings":
-			{
-				"buffer_size": 3468,
+				"buffer_size": 252,
 				"line_ending": "Unix"
 			}
 		},
@@ -555,15 +555,7 @@
 			"file": "src/orders/templates/orders/address_select.html",
 			"settings":
 			{
-				"buffer_size": 425,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/templates/navbar.html",
-			"settings":
-			{
-				"buffer_size": 3541,
+				"buffer_size": 111,
 				"line_ending": "Unix"
 			}
 		},
@@ -571,7 +563,26 @@
 			"file": "src/ecommerce2/urls.py",
 			"settings":
 			{
-				"buffer_size": 1684,
+				"buffer_size": 1213,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/carts/views.py",
+			"settings":
+			{
+				"buffer_size": 6016,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "{% extends \"base.html\" %}\n{% load i18n %}\n{% load crispy_forms_tags %}\n\n{% block content %}\n\n\n{% if not user_can_continue %}\n<div class='col-sm-6'>\n<p class='lead'>Continue as Guest</p>\n\n\n<form method='POST' action=''>{% csrf_token %}\n{{ form|crispy }}\n<input type='submit' class='btn btn-success' value='Continue as Guest' />\n</form>\n\n\n</div>\n<div class='col-sm-6'>\n<p class='lead'>Login to Continue</p>\n<form method='POST' action=\"{% url 'auth_login' %}\"> {% csrf_token %}\n{{ login_form|crispy }}\n\n<input type='hidden' name='next' value='{{ next_url }}' />\n<input type='submit' class='btn btn-success' value='Login' />\n</form>\n<p class='text-center'>\n\n<p>{% trans \"Forgot password\" %}? <a href=\"{% url 'auth_password_reset' %}\">{% trans \"Reset it\" %}</a>!</p>\n<p>{% trans \"Not member\" %}? <a href=\"{% url 'registration_register' %}\">{% trans \"Register\" %}</a>!</p>\n</p>\n\n</div>\n\n{% endif %}\n\n\n{% endblock %}",
+			"file": "src/carts/templates/carts/checkout_view.html",
+			"file_size": 977,
+			"file_write_time": 131103353183626551,
+			"settings":
+			{
+				"buffer_size": 909,
 				"line_ending": "Unix"
 			}
 		}
@@ -617,20 +628,33 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/jmitch/Desktop/ecommerce-2/src",
-		"/Users/jmitch/Desktop/ecommerce-2/src/carts",
-		"/Users/jmitch/Desktop/ecommerce-2/src/carts/templates",
-		"/Users/jmitch/Desktop/ecommerce-2/src/carts/templates/carts",
-		"/Users/jmitch/Desktop/ecommerce-2/src/ecommerce2",
-		"/Users/jmitch/Desktop/ecommerce-2/src/ecommerce2/settings",
-		"/Users/jmitch/Desktop/ecommerce-2/src/orders",
-		"/Users/jmitch/Desktop/ecommerce-2/src/orders/templates",
-		"/Users/jmitch/Desktop/ecommerce-2/src/orders/templates/orders",
-		"/Users/jmitch/Desktop/ecommerce-2/src/templates",
-		"/Users/jmitch/Desktop/ecommerce-2/src/templates/registration"
+		"/home/insta/Projects/ecommerce-2/src",
+		"/home/insta/Projects/ecommerce-2/src/carts",
+		"/home/insta/Projects/ecommerce-2/src/carts/templates",
+		"/home/insta/Projects/ecommerce-2/src/carts/templates/carts",
+		"/home/insta/Projects/ecommerce-2/src/ecommerce2",
+		"/home/insta/Projects/ecommerce-2/src/orders",
+		"/home/insta/Projects/ecommerce-2/src/orders/templates",
+		"/home/insta/Projects/ecommerce-2/src/orders/templates/orders"
 	],
 	"file_history":
 	[
+		"/home/insta/Projects/ecommerce-2/src/orders/templates/address_select.html",
+		"/home/insta/Projects/ecommerce-2/src/orders/views.py",
+		"/home/insta/Projects/ecommerce-2/src/carts/models.py",
+		"/home/insta/Projects/ecommerce-2/src/orders/admin.py",
+		"/home/insta/Projects/ecommerce-2/src/carts/views.py",
+		"/home/insta/Projects/ecommerce-2/src/newsletter/forms.py",
+		"/home/insta/Projects/ecommerce-2/src/carts/templates/carts/view.html",
+		"/home/insta/Projects/ecommerce-2/src/carts/templates/carts/checkout_view.html",
+		"/home/insta/Projects/ecommerce-2/src/orders/forms.py",
+		"/home/insta/Projects/ecommerce-2/src/orders/models.py",
+		"/home/insta/Projects/ecommerce-2/src/todo.txt",
+		"/home/insta/Projects/ecommerce-2/src/nohup.out",
+		"/home/insta/Projects/ecommerce-2/src/ecommerce2/urls.py",
+		"/home/insta/Projects/ecommerce-2/src/templates/navbar.html",
+		"/home/insta/Projects/ecommerce-2/src/orders/templates/orders/address_select.html",
+		"/home/insta/Projects/ecommerce-2/src/orders/templates/orders/order_summary_short.html",
 		"/Users/jmitch/Desktop/ecommerce-2/src/orders/templates/orders/order_list.html",
 		"/Users/jmitch/Desktop/ecommerce-2/src/orders/templates/orders/order_detail.html",
 		"/Users/jmitch/Desktop/ecommerce-2/src/orders/templates/orders/order_summary_short.html",
@@ -742,33 +766,18 @@
 		"/Users/jmitch/Dropbox/projects/kpj/kpj/accounts/views.py",
 		"/Users/jmitch/Dropbox/projects/kpj/kpj/templates/chemicals/review_chemicals.html",
 		"/Users/jmitch/Dropbox/projects/kpj/kpj/kpj/utils.py",
-		"/Users/jmitch/Dropbox/projects/kpj/kpj/teams/forms.py",
-		"/Users/jmitch/Dropbox/projects/kpj/kpj/templates/team/team_member_details.html",
-		"/Users/jmitch/Dropbox/projects/kpj/kpj/accounts/admin.py",
-		"/Users/jmitch/Dropbox/projects/kpj/kpj/company/views.py",
-		"/Users/jmitch/Dropbox/projects/kpj/kpj/templates/chemicals/chemical_list.html",
-		"/Users/jmitch/Dropbox/projects/kpj/kpj/templates/chemicals/default_chemical_form.html",
-		"/Users/jmitch/Dropbox/projects/kpj/kpj/chemicals/admin.py",
-		"/Users/jmitch/Dropbox/projects/kpj/kpj/templates/company/company_admin_list_group.html",
-		"/Users/jmitch/Dropbox/projects/kpj/kpj/templates/sidebar.html",
-		"/Users/jmitch/Dropbox/projects/kpj/kpj/templates/chemicals/chemical_form.html",
-		"/Users/jmitch/Dropbox/projects/kpj/kpj/templates/chemicals/chemical_confirm_delete.html",
-		"/Users/jmitch/Dropbox/projects/kpj/kpj/templates/lectures/manage_sidebar.html",
-		"/Users/jmitch/Dropbox/projects/kpj/kpj/kpj/settings/production.py",
-		"/Users/jmitch/Dropbox/projects/kpj/kpj/templates/favicons.html",
-		"/Users/jmitch/Dropbox/projects/kpj/kpj/templates/favicons.htm",
-		"/Users/jmitch/Dropbox/projects/kpj/kpj/templates/form.html",
-		"/Users/jmitch/Dropbox/projects/kpj/kpj/templates/company/home.html"
+		"/Users/jmitch/Dropbox/projects/kpj/kpj/teams/forms.py"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
 		"height": 108.0,
 		"where_history":
 		[
+			"/home/insta/Projects/ecommerce-2/src",
 			"/Users/jmitch/Desktop/ecommerce-2/src",
 			"/Users/jmitch/Dropbox/projects/kpj",
 			"/Users/jmitch/Dropbox/projects/kpj/kpj",
@@ -785,6 +794,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"please",
+			"next",
+			"checkoutview",
 			"AddressSelectFormView",
 			"order_address",
 			"\"",
@@ -909,10 +921,7 @@
 			"MemberCreateForm",
 			"Member",
 			"member",
-			"member.obj",
-			"member",
-			"activity(request",
-			"activity("
+			"member.obj"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -944,58 +953,85 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/todo.txt",
+					"file": "src/orders/models.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 357,
+						"buffer_size": 778,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								357,
-								357
+								89,
+								89
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "src/orders/templates/orders/order_summary_short.html",
+					"file": "src/orders/admin.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 767,
+						"buffer_size": 179,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								47,
-								47
+								179,
+								179
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/orders/forms.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 713,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								713,
+								713
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1005,63 +1041,31 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "src/orders/views.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3483,
+						"buffer_size": 252,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1003,
-								1003
+								251,
+								251
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 140.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/orders/models.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3468,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2864,
-								2864
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1287.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -1070,21 +1074,51 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 425,
+						"buffer_size": 111,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								255,
-								255
+								111,
+								111
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/ecommerce2/urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1213,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1213,
+								1213
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1094,64 +1128,61 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "src/templates/navbar.html",
+					"buffer": 6,
+					"file": "src/carts/views.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3541,
+						"buffer_size": 6016,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1596,
-								1596
+								5563,
+								5563
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 301.0,
+						"translation.y": 2700.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "src/ecommerce2/urls.py",
+					"buffer": 7,
+					"file": "src/carts/templates/carts/checkout_view.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1684,
+						"buffer_size": 909,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								955,
-								961
+								93,
+								93
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -1159,7 +1190,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 25.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -1196,7 +1227,7 @@
 	"project": "ecommerce2.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1238,7 +1269,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 313.0,
+	"side_bar_width": 198.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
