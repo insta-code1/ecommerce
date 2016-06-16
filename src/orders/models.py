@@ -36,12 +36,13 @@ class UserAddress(models.Model):
 
 
 class Order(models.Model):
+	#status =
 	cart = models.ForeignKey(Cart)
 	user = models.ForeignKey(UserCheckout, null=True)
 	billing_address = models.ForeignKey(UserAddress, related_name='billing_address', null=True)
 	shipping_address = models.ForeignKey(UserAddress, related_name='shipping_address', null=True)
 	shipping_total_price = models.DecimalField(max_digits=50, decimal_places=2, default=5.99)
-	order_total = models.DecimalField(max_digits=50, decimal_places=2, )
+	order_total = models.DecimalField(max_digits=50, decimal_places=2)
 	#order_id
 
 	def __unicode__(self):

@@ -6,7 +6,7 @@
 
 
 {% if not user_can_continue %}
-<div class='col-sm-6'>
+<div class='col-sm-6 text-center'>
 <p class='lead'>Continue as Guest</p>
 
 
@@ -17,7 +17,7 @@
 
 
 </div>
-<div class='col-sm-6'>
+<div class='col-sm-6 text-center'>
 <p class='lead'>Login to Continue</p>
 <form method='POST' action="{% url 'auth_login' %}"> {% csrf_token %}
 {{ login_form|crispy }}
@@ -27,15 +27,15 @@
 </form>
 <p class='text-center'>
 
-<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
+<p>{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p><br/>
 <p>{% trans "Not member" %}? <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>!</p>
 </p>
 
 </div>
 
 {% endif %}
-
-<div class='col-sm-4 col-sm-offset-4 text center'>
+<hr/>
+<div class='col-sm-4 col-sm-offset-4 text-center'>
 <p class='lead'>
 Order Summary</p>
 
@@ -56,18 +56,25 @@ Order Summary</p>
 </table>
 </div>
 
-<div class='col-sm-4 col-sm-offset-4 text center'>
-<p><b>Bulling to</b>
+<div class='col-sm-4 col-sm-offset-4 text-center'>
+<p><b>Billing to</b>
 <br/>
 {{ order.billing_address.get_address }}
-</div>
+
 <p><b>Shipping to</b>
 <br/>
 {{ order.shipping_address }}
-</div>
-<br/>
-<p><b>Complete Order</b>
+<p>
+<p>
+    <br/>
+<a href="{% url 'order_address' %}">Change an Address</a>
 </p>
+
+<form method="POST" action="{% url 'checkout_final' %}">{% csrf_token %}
+<input type="hidden" name="payment_token" value='ABC' />
+<p><b><button type="submit">Complete Order</button></b>
+</p>
+</form>
 
 </div>
 
